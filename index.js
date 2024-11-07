@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 app.set("view engine", "ejs");
-
+let port=process.env.PORT||5000
 const fruits = require("./backend/fruits"); // Ensure this path and file are correct
 const vegetables = require("./backend/vegetables"); // Ensure this path and file are correct
 
@@ -101,6 +101,6 @@ app.post("/delete-vegetable/:id", async (req, res) => {
 });
 
 
-app.listen(8083, () => {
+app.listen(port, () => {
     console.log("Server running on port 8083");
 });
