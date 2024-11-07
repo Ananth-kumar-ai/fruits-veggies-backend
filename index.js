@@ -8,10 +8,10 @@ const vegetables = require("./backend/vegetables"); // Ensure this path and file
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-// Root route
 app.get('/', (req, res) => {
-    res.send("Hello World! The server is running.");
+    res.render("home.ejs");
 });
+
 
 // Route to display all fruits
 app.get("/fruits", async (req, res) => {
